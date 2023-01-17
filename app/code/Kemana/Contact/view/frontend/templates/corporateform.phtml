@@ -1,0 +1,141 @@
+<?php
+/**
+ * Copyright © 2022 PT Kemana Teknologi Solusi. All rights reserved.
+ * http://www.kemana.com
+ */
+
+/**
+ * @category Kemana
+ * @package  Kemana_Contact
+ * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ *
+ *
+ * @author   Parth Godhani <pgodhani@kemana.com>
+ */
+
+/** @var $block Magento\Framework\View\Element\Template */
+?>
+
+<div class="corporate-contact-form">
+   <div class="heading">
+      <h2 class="title"><?= $block->escapeHtml(__('Hubungi ')) ?><span><?= $block->escapeHtml(__('Kami')) ?></span></h2>
+   </div>
+   <form class="form corporate-contact" id="corporate-form" method="post" action="contact/corporate/post">
+      <fieldset class="fieldset with-border">
+         <div class="info">
+            <span class="title"><?= $block->escapeHtml(__('Kami siap memberikan layanan terbaik untuk Anda')) ?></span>
+         </div>
+         <div class="fields left-col">
+           <div class="field name required">
+              <label class="label" for="name"><span class="title"><?= $block->escapeHtml(__('Nama')) ?></span></label>
+              <div class="control">
+                 <input name="name"
+                    id="corporatename"
+                    title="Name"
+                    class="form-control"
+                    type="text"
+                    placeholder="<?= $block->escapeHtml(__('Masukkan nama Anda')) ?>"/>
+              </div>
+           </div>
+           <div class="field email required">
+              <label class="label" for="email"><span class="title"><?= $block->escapeHtml(__('Email')) ?></span></label>
+              <div class="control">
+                 <input name="email"
+                    id="corporateemail"
+                    title="Email"
+                    class="form-control"
+                    type="email"
+                    placeholder="<?= $block->escapeHtml(__('Masukkan email Anda')) ?>"/>
+              </div>
+           </div>
+           <div class="field telephone required">
+              <label class="label" for="telephone"><span class="title"><?= $block->escapeHtml(__('Nomor Telepon')) ?></span></label>
+              <div class="control">
+                 <input name="telephone"
+                    id="corpoartetelephone"
+                    title="PhoneNumber"
+                    class="form-control"
+                    placeholder="<?= $block->escapeHtml(__('Contoh: 081234567890')) ?>"
+                    type="tel"/>
+              </div>
+           </div>
+           <div class="field intrested required">
+              <label class="label" for="intrested"><span class="title"><?= $block->escapeHtml(__('Saya tertarik menjadi')) ?></span></label>
+              <select title="Intrested" name="intrested" class="form-control" id="intrested">
+                 <option><?= $block->escapeHtml(__('Partner'))?></option>
+                 <option><?= $block->escapeHtml(__('Customer'))?></option>
+              </select>
+           </div>
+        </div>
+        <div class="fields right-col">
+           <div class="field companyname required">
+              <label class="label" for="companyname"><span class="title"><?= $block->escapeHtml(__('Nama Perusahaan')) ?></span></label>
+              <div class="control">
+                 <input name="companyname"
+                    id="corporatecompanyname"
+                    title="CompanyName"
+                    class="form-control"
+                    type="text"
+                    placeholder="<?= $block->escapeHtml(__('Masukkan nama perusahaan')) ?>"/>
+              </div>
+           </div>
+           <div class="field companyfield required">
+              <label class="label" for="companyfield"><span class="title"><?= $block->escapeHtml(__('Bidang Perusahaan')) ?></span></label>
+              <div class="control">
+                 <select title="CompanyField" name="companyfield" class="form-control" id="companyfield">
+                     <option value=""><?= $block->escapeHtml(__('-- Select the company field --'))?></option>
+                     <option value="Distribusi"><?= $block->escapeHtml(__('Distribution'))?></option>
+                     <option value="Infrastruktur"><?= $block->escapeHtml(__('Infrastructure'))?></option>
+                     <option value="Jasa keuangan"><?= $block->escapeHtml(__('Financial services'))?></option>
+                     <option value="Kesehatan"><?= $block->escapeHtml(__('Health'))?></option>
+                     <option value="Konstruksi"><?= $block->escapeHtml(__('Construction'))?></option>
+                     <option value="Manufaktur"><?= $block->escapeHtml(__('Manufacture'))?></option>
+                     <option value="Pariwisata"><?= $block->escapeHtml(__('Tourist'))?></option>
+                     <option value="Pemerintahan"><?= $block->escapeHtml(__('Government'))?></option>
+                     <option value="Pendidikan"><?= $block->escapeHtml(__('Education'))?></option>
+                     <option value="Pertambangan"><?= $block->escapeHtml(__('Mining'))?></option>
+                     <option value="Pertanian"><?= $block->escapeHtml(__('Agriculture'))?></option>
+                     <option value="Perdagangan"><?= $block->escapeHtml(__('Trading'))?></option>
+                     <option value="Ritel"><?= $block->escapeHtml(__('Retail'))?></option>
+                     <option value="Teknologi"><?= $block->escapeHtml(__('Technology'))?></option>
+                     <option value="Telekomunikasi"><?= $block->escapeHtml(__('Telecommunication'))?></option>
+                 </select>
+              </div>
+           </div>
+           <div class="field job required">
+              <label class="label" for="job"><span class="title"><?= $block->escapeHtml(__('Jabatan')) ?></span></label>
+              <div class="control">
+                 <input name="job"
+                    id="corporatejob"
+                    title="job"
+                    class="form-control"
+                    type="text"
+                    placeholder="<?= $block->escapeHtml(__('Masukkan jabatan')) ?>"/>
+              </div>
+           </div>
+           <div class="field desired required">
+              <label class="label" for="desired">
+              <span class="title"><?= $block->escapeHtml(__('Solusi yang diinginkan')) ?></span>
+              </label>
+              <div class="control">
+                 <textarea name="desired"
+                    id="corporatedesired"
+                    title="DesiredSolution"
+                    class="form-control"
+                    cols="5"
+                    rows="3"
+                    placeholder="<?= $block->escapeHtml(__('Masukkan solusi yang Anda inginkan')) ?>"/>
+              </div>
+           </div>
+         </div>
+      </fieldset>
+      <div class="actions-toolbar">
+         <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="Send" class="corporatebtn">
+            <span class="title"><?= $block->escapeHtml(__('KIRIM')) ?></span>
+            </button>
+         </div>
+      </div>
+   </form>
+</div>

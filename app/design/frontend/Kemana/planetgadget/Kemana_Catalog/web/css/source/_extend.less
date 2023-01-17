@@ -1,0 +1,38 @@
+// /**
+//  * Copyright © 2022 Kemana. All rights reserved.
+//  * @author Harshani Karunasekara <hkarunasekara@kemana.com>
+//  * http://www.kemana.com
+//  */
+
+@import 'module/_kemana-listings_extend.less';
+@import 'module/_kemana-details_extend.less';
+@import "module/_kemana-gallery_extend.less";
+@import "module/_store-avail-popup.less";
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product.info.detailed {
+        .additional-attributes {
+            width: 100%;
+        }
+    }
+
+    body.catalog-product-view .product-page-top-section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+//
+//  Tablet Screen - Landscape [from 1024px and above]
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+    body.catalog-product-view .product-page-top-section {
+        flex-direction: row;
+    }
+}

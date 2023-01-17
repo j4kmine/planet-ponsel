@@ -1,0 +1,58 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<!-- ko if: (isVisible()) -->
+<div class="shipping-information">
+    <!-- ko if: (!isStorePickup()) -->
+    <div class="ship-to">
+        <div class="shipping-information-title">
+            <span data-bind="i18n: 'Info Pengiriman'"></span>
+            <button class="action action-edit" data-bind="click: back">
+                <span data-bind="i18n: 'Ubah'"></span>
+            </button>
+        </div>
+        <div class="shipping-information-content">
+            <div class="shipping-method-details">
+                <span class="title-value" data-bind="text: getShippingMethodTitle()"></span>
+                <span class="price" data-bind="text: getShippingMethodPrice()"></span>
+                <br/>
+            </div>
+            <!-- ko foreach: getRegion('ship-to') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+    </div>
+    <!--/ko-->
+    <!-- ko ifnot: (!isStorePickup()) -->
+    <div class="ship-via">
+        <div class="shipping-information-title">
+            <span data-bind="i18n: 'Info Pengambilan'"></span>
+            <button class="action action-edit" data-bind="click: backToShippingMethod">
+                <span data-bind="i18n: 'Ubah'"></span>
+            </button>
+        </div>
+        <div class="shipping-information-content">
+            <span class="title-value" data-bind="text: getShippingMethodTitle()"></span>
+            <br/>
+            <span class="address-value" data-bind="text: getShippingMethodAddress()"></span>
+            <br/><br/>
+            <span class="telephone-value" data-bind="text: getShippingMethodTelephone()"></span>
+            <br/>
+            <!-- ko with: {locationDescriptionUnsanitizedHtml: selectedLocation().description} -->
+                <p class="location-description" html="locationDescriptionUnsanitizedHtml"></p>
+            <!-- /ko -->
+            <span class="date-title" data-bind="i18n: 'Pick Up Date'"></span><br/>
+            <span class="date-value" data-bind="text: getShippingMethodDate()"></span>
+            <br/>
+            <br/>
+            <span class="time-title" data-bind="i18n: 'Pick Up Time'"></span><br/>
+            <span class="time-value" data-bind="text: getShippingMethodTime()"></span>
+        </div>
+    </div>
+    <!--/ko-->
+</div>
+<!--/ko-->

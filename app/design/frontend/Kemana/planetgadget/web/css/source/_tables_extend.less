@@ -1,0 +1,104 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    #shopping-cart-table.data.table.table-giftregistry-items .col.product {
+        padding-left: 0;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .table-wrapper {
+        .table {
+            &:not(.cart) {
+                &:not(.totals) {
+                    &:not(.table-comparison) {
+                        tbody > tr {
+                            > td {
+                                padding-left: 76px;
+
+                                &[data-th] {
+                                    &:before {
+                                        .lib-css(color, @color-pg-dark-gray);
+                                    }
+                                }
+                            }
+                        }
+
+                        tfoot {
+                            tr {
+                                th {
+                                    width: 50%;
+                                    padding-block: @indent__s - 3px @indent__s - 4px;
+                                }
+
+                                td {
+                                    width: 50%;
+                                    padding-block: @indent__s - 3px @indent__s - 4px;
+                                }
+
+                                &:first-child {
+                                    th {
+                                        padding-top: @indent__base - 3px;
+                                    }
+
+                                    td {
+                                        padding-top: @indent__base - 3px;
+                                    }
+                                }
+
+                                &:last-child {
+                                    th {
+                                        padding-block: @indent__base - 3px @indent__base - 4px;
+                                    }
+
+                                    td {
+                                        padding-block: @indent__base - 3px @indent__base - 4px;
+                                    }
+                                }
+
+                                &.shipping {
+                                    th {
+                                        padding-bottom: @indent__base - 6px;
+                                    }
+
+                                    td {
+                                        padding-bottom: @indent__base - 6px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .table:not(.cart) {
+                &:not(.totals) {
+                    &:not(.table-comparison) {
+                        &.additional-attributes {
+                            tbody tr {
+                                > td {
+                                    &[data-th] {
+                                        &:before {
+                                            width: 165px;
+                                        }
+                                    }
+
+                                    &:last-child {
+                                        padding-left: 165px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

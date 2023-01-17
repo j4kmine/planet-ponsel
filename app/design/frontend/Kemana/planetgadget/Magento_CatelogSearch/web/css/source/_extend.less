@@ -1,0 +1,252 @@
+// /**
+//  * Copyright © 2020 Kemana. All rights reserved.
+//  * @author Harshani Karunasekara <hkarunasekara@kemana.com>
+//  * http://www.kemana.com
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+// /**
+//  * Copyright © 2022 Kemana. All rights reserved.
+//  * @author Harshani Karunasekara <hkarunasekara@kemana.com>
+//  * http://www.kemana.com
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@autocomplete__background-color: @color-white;
+@autocomplete__border: @border-width__base solid @color-white;
+@autocomplete-item__border: @border-width__base solid @color-gray90;
+@autocomplete-item__hover__color: @color-pg-light-gray2;
+@autocomplete-item-amount__color: @kemana-primary-brand-color;
+
+@autocomplete-input-text__color: @color-white;
+
+@autocomplete-input__border-bottom: @border-width__base solid @color-kemana-gray2;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .block-search {
+        margin-top: 0;
+        margin-right: 13px;
+        //.lib-css(background, @color-white);
+        //border-radius: @common-border-radius;
+        //height: 40px;
+        padding-block: 10px;
+
+        .label {
+            .lib-icon-font(
+                @_icon-font-content: @icon-pg-search,
+                @_icon-font-size: 22px,
+                @_icon-font-line-height: 22px,
+                @_icon-font-color: @kemana-primary-brand-color,
+                @_icon-font-color-hover: @color-kemana-gray2,
+                @_icon-font-color-active: @header-icons-color-hover,
+                @_icon-font-text-hide: true,
+                @_icon-font-margin: 0 15px 0 0
+            );
+        }
+
+        input {
+            .lib-css(background, @color-white);
+            .lib-css(border,none);
+            .lib-css(color, @kemana-primary-brand-color);
+            font-size: 12px;
+            padding-left: 15px;
+            font-style: normal;
+            margin: 10px 0;
+
+            &:focus {
+                .lib-css(border, @border-width__base solid @color-white);
+            }
+        }
+
+        input::-webkit-input-placeholder {
+            .lib-css(color, @color-pg-dark-gray);
+            font-size: 12px;
+            letter-spacing: .35px;
+            font-style: normal;
+            .lib-css(font-family, @font-family-name__base);
+        }
+
+    }
+
+    .search-autocomplete {
+        margin-top: -5px;
+        padding-block: 4px 10px;
+        border-radius: 0 0 @common-border-radius @common-border-radius;
+        box-shadow: none;
+        border: none;
+
+        ul {
+            li {
+                .lib-css(padding, @indent__s - 3 15px @indent__s - 4);
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-search {
+        .control {
+            left: 0;
+            bottom: -60px;
+            .lib-css(background-color, @color-pg-black2);
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            z-index: 999;
+            pointer-events: none;
+            transition: .3s all ease;
+
+            input {
+                background: @color-white;
+                border-radius: @common-border-radius;
+                padding: 10px 15px;
+                line-height: 20px;
+                height: 40px;
+            }
+        }
+
+        .action.search {
+            position: relative;
+            left: 0;
+            top: 0;
+            .lib-button-icon(
+                @_icon-font-content: @icon-pg-close-button,
+                @_icon-font-text-hide: true,
+                @_icon-font-size: 18px,
+                @_icon-font-line-height: 48px,
+                @_icon-font-margin: 0 2px,
+                @_icon-font-color: @kemana-primary-brand-color
+            );
+        }
+
+        .nested {
+            display: none;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-search {
+        margin-top: 1px;
+        max-width: 530px;
+
+        .label {
+            position: absolute;
+            right : 0;
+            top: 20px;
+        }
+
+        .control {
+            padding: 0;
+
+            .input-text {
+                width: 100%;
+                border-radius: @common-border-radius;
+                background: @color-white;
+                line-height: 20px;
+                height: 40px;
+                padding: 10px 15px;
+                opacity: 1;
+            }
+        }
+
+        .nested {
+            display: none;
+        }
+    }
+}
+
+//
+//  Desktop Extra Large
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .block-search {
+        width: 530px;
+
+        .action.search {
+            right: 15px;
+            top: 15px;
+
+            .lib-icon-font(
+                @_icon-font-content: @icon-pg-close-button,
+                @_icon-font-size: 18px,
+                @_icon-font-margin: 0 2px 0 0
+                );
+        }
+    }
+}
+
+//
+//  Desktop Extra Large
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .block-search {
+        width: 530px;
+        max-width: none;
+    }
+}
+
+/* Tablet device */
+@media (min-width: @screen__m) and (max-width: 1023px) {
+    .block-search {
+        .control {
+            left: 0;
+            bottom: -60px;
+            .lib-css(background-color, @color-pg-black2);
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            z-index: 999;
+            pointer-events: none;
+            transition: .3s all ease;
+            opacity: 0;
+            border: 0;
+            position: absolute;
+
+            input {
+                background: @color-white;
+                border-radius: @common-border-radius;
+                padding: 10px 15px;
+                line-height: 20px;
+                height: 40px;
+            }
+        }
+
+        .action.search {
+            position: relative;
+            left: 0;
+            top: 0;
+            .lib-button-icon(
+                @_icon-font-content: @icon-pg-close-button,
+                @_icon-font-text-hide: true,
+                @_icon-font-size: 18px,
+                @_icon-font-line-height: 48px,
+                @_icon-font-margin: 0 2px,
+                @_icon-font-color: @kemana-primary-brand-color
+            );
+        }
+
+        .nested {
+            display: none;
+        }
+    }
+}
